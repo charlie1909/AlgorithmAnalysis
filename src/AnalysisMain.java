@@ -1,3 +1,5 @@
+import com.sun.xml.internal.bind.v2.model.annotation.Quick;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,5 +23,16 @@ public class AnalysisMain {
         }
         System.out.println("");
         System.out.println("The algorithm ran in " + (end - start) + "nanoseconds");
+
+        long start2 = System.nanoTime();
+        QuickSort quickSort = new QuickSort();
+        quickSort.run(list);
+        long end2 = System.nanoTime();
+
+        for(int i = 0; i < list.size(); i++){
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println("");
+        System.out.println("The algorithm ran in " + (end2 - start2) + "nanoseconds");
     }
 }
