@@ -1,7 +1,7 @@
 import java.util.Collections;
 import java.util.List;
 
-public class QuickSort {
+public class QuickSort implements Algorithm{
 
     public void run(List<Integer> toSort){
         quickSort(toSort, 0, toSort.size()-1);
@@ -30,5 +30,10 @@ public class QuickSort {
         }
         Collections.swap(toSort, i+1, high);
         return (i+1);
+    }
+
+    @Override
+    public String getAlgorithmName() {
+        return "QuickSort";
     }
 }
